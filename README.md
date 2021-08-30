@@ -1,5 +1,37 @@
 Docker image for Cadabra2 [https://cadabra.science](https://cadabra.science)
 
+### Tags
+
+- Tags: 2.3.6.6:  **Cadabra2** version **2.3.6.6** (dated **2021-08-31**)
+
+### Usage
+
+Run the following command in your shell: (change `<your_work_place>` as your local absolute directory)
+
+```bash
+docker run --rm -p 3090:22 -p 3091:8888 -p 3092:3092 \
+-v <your_work_place>:/home/ -w /home \
+--entrypoint jupyter-lab iphysresearch/cadabra2_docker:2.3.6.6 --allow-root
+```
+
+Then, A Jupyter Lab server is running at your localhost `http://0.0.0.0:3091/lab` as usual.
+
+Note that the docker image's `ENTRYPOINT` is `cadabra2-gtk`.
+
+### Screenshot
+
+![](https://vip1.loli.io/2021/08/31/Tne5SaUyZAX1VhM.png)
+
+
+---
+---
+# **Below is outdated.**
+
+### Tags
+
+- Tags: 2.2.7:  **Cadabra2** version **2.2.7** (build 2134.2c4993dd63 dated **2019-06-12**)
+
+
 ### Usage
 
 > Ref: [Docker for Mac and GUI applications](https://fredrikaverpil.github.io/2016/07/31/docker-for-mac-and-gui-applications/)
@@ -29,9 +61,6 @@ xhost + $ip
 docker run -d --name cadabra2 -e DISPLAY=$ip:0 -v /tmp/.X11-unix:/tmp/.X11-unix iphysresearch/cadabra2_docker:2.2.7
 ```
 
-### Tags
-
-- Tags: 2.2.7:  **Cadabra2** version **2.2.7** (build 2134.2c4993dd63 dated **2019-06-12**)
 
 ### Dockerfile
 
