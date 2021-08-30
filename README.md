@@ -6,21 +6,27 @@ Docker image for Cadabra2 [https://cadabra.science](https://cadabra.science)
 
 ### Usage
 
-Run the following command in your shell: (change `<your_work_place>` as your local absolute directory)
+Run the following command in your shell: (replace `<your_work_place>` as your local absolute directory)
 
 ```bash
-docker run --rm -p 3090:22 -p 3091:8888 -p 3092:3092 \
+docker run -p 3090:22 -p 3091:8888 -p 3092:3092 \
 -v <your_work_place>:/home/ -w /home \
---entrypoint jupyter-lab iphysresearch/cadabra2_docker:2.3.6.6 --allow-root
+iphysresearch/cadabra2_docker:2.3.6.6 /bin/bash
 ```
 
-Then, A Jupyter Lab server is running at your localhost `http://0.0.0.0:3091/lab` as usual.
+Run the command below in your container to keep it runing:
 
-Note that the docker image's `ENTRYPOINT` is `cadabra2-gtk`.
+```bash
+nohup jupyter lab --allow-root &
+```
+
+Then, a Jupyter Lab server is running at your localhost `http://0.0.0.0:3091/lab` as usual.
+
+Lastly, just type `ctrl+p+q` to exit and keep the container active.
 
 ### Screenshot
 
-![](https://vip1.loli.io/2021/08/31/Tne5SaUyZAX1VhM.png)
+![](https://vip1.loli.io/2021/08/31/pN9evMZWEz1bocY.png)
 
 
 ---
